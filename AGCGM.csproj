@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0EABC1A6-470E-40C1-B757-F5D764374BB6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>AGCGM</RootNamespace>
+    <AssemblyName>AGCGM</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behavior\Cache.cs" />
+    <Compile Include="Behavior\GameCover.cs" />
+    <Compile Include="Behavior\GameList.cs" />
+    <Compile Include="Behavior\GameTabs.cs" />
+    <Compile Include="Behavior\Log.cs" />
+    <Compile Include="Behavior\SidePanel.cs" />
+    <Compile Include="Behavior\Task\TransferTask.cs" />
+    <Compile Include="Behavior\Task\DownloadTask.cs" />
+    <Compile Include="Behavior\Task\AddBackupTask.cs" />
+    <Compile Include="Behavior\Task\AddDirectoryTask.cs" />
+    <Compile Include="Behavior\Task\InitialScanTask.cs" />
+    <Compile Include="Controls\DataPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DataPanel.Designer.cs">
+      <DependentUpon>DataPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Page\GamePage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Page\GamePage.Designer.cs">
+      <DependentUpon>GamePage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Page\DBPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Page\DBPage.Designer.cs">
+      <DependentUpon>DBPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Page\LogPage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Page\LogPage.Designer.cs">
+      <DependentUpon>LogPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\ProgressBarEx.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ProgressBarEx.Designer.cs">
+      <DependentUpon>ProgressBarEx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TransferContainer.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TransferContainer.Designer.cs">
+      <DependentUpon>TransferContainer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DownloadItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\DownloadItem.Designer.cs">
+      <DependentUpon>DownloadItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TransferItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\TransferItem.Designer.cs">
+      <DependentUpon>TransferItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.Designer.cs">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ConfigForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ConfigForm.Designer.cs">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Configs\CoverData.cs" />
+    <Compile Include="Internal\Configs\CoverRegionData.cs" />
+    <Compile Include="Internal\DriveDetection\DriveDetecter.cs" />
+    <Compile Include="Internal\DriveDetection\DriveDetecterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Internal\DriveDetection\DriveDetecterForm.Designer.cs">
+      <DependentUpon>DriveDetecterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Internal\Extensions\ProgressBarExExtension.cs" />
+    <Compile Include="Internal\Configs\DirectoryData.cs" />
+    <Compile Include="Internal\Configs\DriveData.cs" />
+    <Compile Include="Internal\Configs\Settings.cs" />
+    <Compile Include="Internal\Serialize\GameInfo.cs" />
+    <Compile Include="Internal\Serialize\GameInfoItem.cs" />
+    <Compile Include="Internal\IO\Drive.cs" />
+    <Compile Include="Internal\IO\GC\DiskGC.cs" />
+    <Compile Include="Internal\IO\GC\DiskGC.Exceptions.cs" />
+    <Compile Include="Internal\IO\GC\DiskGC.FileSystem.cs" />
+    <Compile Include="Internal\IO\GC\DiskGC.Header.cs" />
+    <Compile Include="Internal\IO\GC\DiskGC.Loader.cs" />
+    <Compile Include="Internal\IO\GC\Files\BNR.cs" />
+    <Compile Include="Internal\Threading\TaskManaged.cs" />
+    <Compile Include="Internal\Tools\Calc.cs" />
+    <Compile Include="Internal\Tools\Convert.cs" />
+    <Compile Include="Internal\Tools\DataSize.cs" />
+    <Compile Include="Internal\Tools\Execute.cs" />
+    <Compile Include="Internal\FormUtil\ListViewItemSorter.cs" />
+    <Compile Include="Internal\Tools\ResXManager.cs" />
+    <Compile Include="Internal\Tools\Util.cs" />
+    <Compile Include="Internal\XMLDB\TDBCompany.cs" />
+    <Compile Include="Internal\XMLDB\TDBEnums.cs" />
+    <Compile Include="Internal\XMLDB\TDBDatabase.cs" />
+    <Compile Include="Internal\XMLDB\TDBConst.cs" />
+    <Compile Include="Internal\XMLDB\TDBGame.cs" />
+    <Compile Include="Lang\StringExtensions.cs" />
+    <Compile Include="Lang\strings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>strings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Lang\TDBStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TDBStrings.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResX\Icons.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Icons.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ResX\Images.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Images.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\DataPanel.resx">
+      <DependentUpon>DataPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Page\GamePage.resx">
+      <DependentUpon>GamePage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Page\DBPage.resx">
+      <DependentUpon>DBPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\Page\LogPage.resx">
+      <DependentUpon>LogPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\ProgressBarEx.resx">
+      <DependentUpon>ProgressBarEx.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TransferContainer.resx">
+      <DependentUpon>TransferContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\DownloadItem.resx">
+      <DependentUpon>DownloadItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Controls\TransferItem.resx">
+      <DependentUpon>TransferItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.resx">
+      <DependentUpon>Inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ConfigForm.resx">
+      <DependentUpon>ConfigForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\strings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>strings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lang\TDBStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TDBStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="ResX\Icons.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Icons.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResX\Images.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Images.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <Compile Include="Internal\IO\GC\DiskGC.Enums.cs" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GC_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GC_disabled_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wii_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wii_disabled_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USB_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\USB_hidden_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_hidden_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_open_hidden_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fixed_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search_16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_open_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flag_europe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expandir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\G8MP01-0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\info_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\remove_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cloud_download_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_exit_to_app_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_home_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_launch_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_note_add_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_settings_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_tab_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_create_new_folder_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic_usb_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nobanner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information 20x20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warning_white_241.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\front.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_Netherlands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_USA.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_France.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_Germany.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_Italy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_Japan.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_Spain.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flag_International.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\balanceboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\classiccontroller.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dancepad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\drums.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gameboy advance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gamecube.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guitar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\microphone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\motionplus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nunchuk.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\vitalitysensor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiimote.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiimotehand.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wiispeak.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\zapper.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

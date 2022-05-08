@@ -1,0 +1,30 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="AGCGM.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="ConfigDirectory" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">configs</Value>
+    </Setting>
+    <Setting Name="ConfigFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Config.xml</Value>
+    </Setting>
+    <Setting Name="GameInfoFile" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">GameInfo.xml</Value>
+    </Setting>
+    <Setting Name="CacheBannerDir" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cache\banner</Value>
+    </Setting>
+    <Setting Name="CacheCoverFront" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cache\cover\front</Value>
+    </Setting>
+    <Setting Name="CacheCoverFront3D" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cache\cover\front3D</Value>
+    </Setting>
+    <Setting Name="CacheCoverFull" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cache\cover\full</Value>
+    </Setting>
+    <Setting Name="CacheCoverDisk" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cache\cover\disk</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
